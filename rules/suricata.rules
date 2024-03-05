@@ -1,0 +1,1 @@
+alert http any any -> any any (msg:"hit baidu.com..."; content:"baidu"; sid:400123; reference:url, www.baidu.com; rev:1024; gid:2048;)

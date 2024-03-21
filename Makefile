@@ -1,5 +1,5 @@
 # 定义变量
-IMAGE_NAME := my-docker-image
+IMAGE_NAME := suricata-server
 DOCKERFILE := Dockerfile
 
 # 默认目标

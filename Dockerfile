@@ -9,7 +9,7 @@ RUN adduser --disabled-password --gecos '' suricata && \
     sed -i "s@http://ftp.debian.org@https://repo.huaweicloud.com@g" /etc/apt/sources.list && \
     sed -i "s@http://security.debian.org@https://repo.huaweicloud.com@g" /etc/apt/sources.list && \
     sed -i "s@http://deb.debian.org@https://repo.huaweicloud.com@g" /etc/apt/sources.list && \
-    apt-get update -o Acquire::https::No-Cache=True -o Acquire::http::No-Cache=True --allow-unauthenticated && \
+    apt-get update && \
     apt-get install python3 python3-pip suricata libcap2-bin -y && \
     pip3 install --no-cache-dir requests && \
     pip3 install --upgrade suricata-update && \

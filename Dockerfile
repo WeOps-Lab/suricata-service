@@ -4,11 +4,9 @@ ADD entry-point.sh entry-point.sh
 RUN adduser --disabled-password --gecos '' suricata && \
     mkdir ~/.config/pip/ -p && \
     echo "[global]\nindex-url = https://repo.huaweicloud.com/repository/pypi/simple\nbreak-system-packages = true" > ~/.config/pip/pip.conf && \
-    apt update && \
-    apt install apt-transport-https ca-certificates -y && \
-    sed -i "s@http://ftp.debian.org@https://repo.huaweicloud.com@g" /etc/apt/sources.list && \
-    sed -i "s@http://security.debian.org@https://repo.huaweicloud.com@g" /etc/apt/sources.list && \
-    sed -i "s@http://deb.debian.org@https://repo.huaweicloud.com@g" /etc/apt/sources.list && \
+    sed -i "s@ftp.debian.org@repo.huaweicloud.com@g" /etc/apt/sources.list && \
+    sed -i "s@security.debian.org@repo.huaweicloud.com@g" /etc/apt/sources.list && \
+    sed -i "s@deb.debian.org@repo.huaweicloud.com@g" /etc/apt/sources.list && \
     apt-get update && \
     apt-get install python3 python3-pip suricata libcap2-bin -y && \
     pip3 install --no-cache-dir requests && \
